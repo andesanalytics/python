@@ -54,7 +54,7 @@ donde:
 
 <img src="https://drive.google.com/uc?export=view&id=1DkN--ePlAYIsFxBSLPUWmGKJ_C7Nxe-o" width = "600" align="center"/>
 
-2. Marcar las opciones como se muestra en la imagen y guardar sus cambios.
+2. Marcar las opciones como se muestra en la imagen y guardar sus cambios
 
 <img src="https://drive.google.com/uc?export=view&id=1Ww6EtcUz8xFHvK0oBc0E8L2KWZ89VQXO" width = "500" align="center"/>
 
