@@ -1,0 +1,98 @@
+# Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+# Project information
+site_name: Andes Analytics - Python para seguros
+site_url: https://hizocar.github.io/python_andes_analytics/
+site_author: Sebastián Azócar
+site_description:
+
+# Repository
+repo_name: hizocar/python_andes_analytics
+repo_url: https://github.com/hizocar/python_andes_analytics
+edit_uri: ''
+
+
+# Markdown extensions
+markdown_extensions:
+  - attr_list
+  - admonition
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tabbed
+
+# Extra javascript
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Theme
+theme:
+  name: material
+  language: es
+  logo: images/logo.bmp
+  favicon: images/logo_python.svg
+  features:
+    - navigation.instant
+    - navigation.top
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+  palette:
+    # Light mode
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hizocar
+
+
+# Plugins
+plugins:
+  - mkdocs-jupyter:
+      kernel_name: python3
+      show_input: false
+  - search
+
+# TOC
+nav:
+    - Home: index.md
+    - Programa: programa.md
+    - Clases grabadas: clases.md
+    - Cápsulas: capsulas.md
+    - Módulo 1:
+      - modulo_1/clase1.ipynb
+      - modulo_1/clase2.ipynb
+      - modulo_1/clase3.ipynb
+      - modulo_1/Desafio.ipynb
+    - Módulo 2:
+      - modulo_2/clase1.ipynb
+      - modulo_2/clase2.ipynb
+      - modulo_2/clase3.ipynb
+      - modulo_2/Desafio.ipynb
+
+
