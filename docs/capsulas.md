@@ -12,3 +12,7 @@
 
 ### Uso de arrays numpy 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wGfFCewK7iQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Modulo 3
+### Importar y exportar datos con Pandas
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4jFNEYHIwWY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
