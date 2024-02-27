@@ -651,15 +651,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conceptos-basicos-de-reservas-de-seguros" class="md-nav__link">
-    Conceptos Básicos de Reservas de Seguros
+  <a href="#manejo-de-datos-con-chainladder" class="md-nav__link">
+    Manejo de Datos con Chainladder
+  </a>
+  
+    <nav class="md-nav" aria-label="Manejo de Datos con Chainladder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-se-trabaja-con-una-clase-triangle" class="md-nav__link">
+    ¿Cómo se trabaja con una clase Triangle?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-construye-una-clase-triangle" class="md-nav__link">
+    ¿Cómo se construye una clase Triangle?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelado-actuarial-basico" class="md-nav__link">
+    Modelado Actuarial Básico
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#manejo-de-datos-con-chainladder" class="md-nav__link">
-    Manejo de Datos con Chainladder
+  <a href="#metodos-avanzados-de-modelado" class="md-nav__link">
+    Métodos Avanzados de Modelado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizacion-y-reporte" class="md-nav__link">
+    Visualización y Reporte
   </a>
   
 </li>
@@ -1826,14 +1860,62 @@ print(cl.__version__)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="conceptos-basicos-de-reservas-de-seguros">Conceptos B&#225;sicos de Reservas de Seguros<a class="anchor-link" href="#conceptos-basicos-de-reservas-de-seguros">&#182;</a></h2><p>En el análisis de reservas de seguros, un <strong>triángulo de desarrollo de pérdidas</strong> es una herramienta 
-fundamental. Representa los datos de pérdidas en forma de triángulo, donde cada fila representa un 
-periodo de origen (por ejemplo, un año) y cada columna representa un periodo de desarrollo.</p>
-<p>La metodología de Chainladder se basa en la hipótesis de que los patrones de desarrollo de pérdidas 
-son consistentes a lo largo del tiempo, permitiendo así la proyección de pérdidas futuras.</p>
+<h2 id="manejo-de-datos-con-chainladder">Manejo de Datos con Chainladder<a class="anchor-link" href="#manejo-de-datos-con-chainladder">&#182;</a></h2><ul>
+<li>El paquete chainladder tiene su propia estructura de datos <code>:class:Triangle</code> que se comporta de manera muy similar a un <code>DataFrame</code> de <code>pandas</code></li>
+<li>Por qué no <code>pandas</code>? Principalmente porque podemos manejar multiples triángulos al mismo tiempo, junto con la eficiencia en memoria</li>
+<li>La estructura <code>Triangle</code> es una estructura de datos en 4D con ejes etiquetados. Estos ejes son <code>index</code>, <code>columns</code>, <code>origin</code>, <code>development</code></li>
+</ul>
+<p><code>index</code> (axis 0): Es la agrupación mínima a la cual se requiera ver los datos (por ejemplo por producto, tipo de negocio, ramo fecu). Tal como en <code>pandas.multiIndex</code>, se pueden tener más de una columa dentro de <code>index</code></p>
+<p><code>columns</code> (axis 1): Son el o los valores numéricos que deseas agrupar en triángulo. Si bien el valor obvio a acumular es el de siniestros pagados, también puedes tener otros triángulos como el número de siniestros, o los siniestros pendientes por ejemplo.</p>
+<p><code>origin</code> (axis 2): Es el eje vertical dentro de un triángulo tradicional. Corresponde al mes, trimestre, semestre o año en el cual ocurrió el siniestro. La periodicidad se puede definir por el usuario.</p>
+<p><code>development</code> (axis 3): Es el eje horizontal del triángulo. Representa el periodo en que el siniestro fue reportado. Al igual que el indice <code>origin</code> se puede tomar la periodicidad mensual, trimestral, semestral, anual.</p>
+<h3 id="como-se-trabaja-con-una-clase-triangle">&#191;C&#243;mo se trabaja con una clase <code>Triangle</code>?<a class="anchor-link" href="#como-se-trabaja-con-una-clase-triangle">&#182;</a></h3><ul>
+<li>Independiente de poseer 4 dimensiones, esta clase permite que se interactúe con él de la misma manera que en <code>pandas</code>. Puedes usar los índices <code>index</code> y <code>columns</code> de la misma manera que en un <code>DataFrame</code>, donde cada elemento será un triángulo tradicional.</li>
+</ul>
+<h3 id="como-se-construye-una-clase-triangle">&#191;C&#243;mo se construye una clase <code>Triangle</code>?<a class="anchor-link" href="#como-se-construye-una-clase-triangle">&#182;</a></h3><ul>
+<li>Una clase <code>Triangle</code> se crea a partir de un <code>DataFrame</code> de <code>pandas</code>, el cuál debe poseer como mínimo las siguientes columnas.<ul>
+<li>Dos columnas de tipo fecha que representen los ejes <code>origin</code> y <code>development</code>.</li>
+<li>Una columna numérica que represente el eje <code>columns</code></li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-3">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">raa_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/casact/chainladder-python/master/chainladder/utils/data/raa.csv&quot;</span><span class="p">)</span>
+<span class="n">raa_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+<div id="cell-3" class="clipboard-copy-txt">raa_df = pd.read_csv("https://raw.githubusercontent.com/casact/chainladder-python/master/chainladder/utils/data/raa.csv")
+raa_df.head(10)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -1842,16 +1924,45 @@ son consistentes a lo largo del tiempo, permitiendo así la proyección de pérd
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="manejo-de-datos-con-chainladder">Manejo de Datos con Chainladder<a class="anchor-link" href="#manejo-de-datos-con-chainladder">&#182;</a></h2><p><code>chainladder</code> proporciona varias funcionalidades para cargar y manipular datos de seguros. Por ejemplo, 
-puedes cargar un conjunto de datos de ejemplo incluido en la biblioteca:</p>
-<div class="highlight"><pre><span></span><span class="c1"># Cargar un conjunto de datos de ejemplo</span>
-<span class="n">triangulo</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;RAA&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">triangulo</span><span class="p">)</span>
-</pre></div>
-<p>Este código cargará un triángulo de desarrollo de pérdidas del conjunto de datos 'RAA'.</p>
+<p>Vemos que dataframe cargado posee las columnas mínimas requeridas.
+La forma para obtener una clase de tipo <code>Triangle</code> se obtiene con el método <code>Triangle</code></p>
 
 </div>
 </div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-4">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">raa</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Triangle</span><span class="p">(</span><span class="n">raa_df</span><span class="p">,</span><span class="n">origin</span><span class="o">=</span><span class="s2">&quot;origin&quot;</span><span class="p">,</span><span class="n">development</span><span class="o">=</span><span class="s2">&quot;development&quot;</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;values&quot;</span><span class="p">,</span><span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">raa</span>
+</pre></div>
+<div id="cell-4" class="clipboard-copy-txt">raa = cl.Triangle(raa_df,origin="origin",development="development",columns="values",cumulative=True)
+raa</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
