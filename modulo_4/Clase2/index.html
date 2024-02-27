@@ -672,6 +672,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#parametro-cumulative" class="md-nav__link">
+    Parametro cumulative
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valoracion-vs-desarrollo" class="md-nav__link">
+    Valoración vs Desarrollo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#granularidad-del-triangulo" class="md-nav__link">
+    Granularidad del Triangulo
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1868,9 +1889,9 @@ print(cl.__version__)</div>
 <p><code>index</code> (axis 0): Es la agrupación mínima a la cual se requiera ver los datos (por ejemplo por producto, tipo de negocio, ramo fecu). Tal como en <code>pandas.multiIndex</code>, se pueden tener más de una columa dentro de <code>index</code></p>
 <p><code>columns</code> (axis 1): Son el o los valores numéricos que deseas agrupar en triángulo. Si bien el valor obvio a acumular es el de siniestros pagados, también puedes tener otros triángulos como el número de siniestros, o los siniestros pendientes por ejemplo.</p>
 <p><code>origin</code> (axis 2): Es el eje vertical dentro de un triángulo tradicional. Corresponde al mes, trimestre, semestre o año en el cual ocurrió el siniestro. La periodicidad se puede definir por el usuario.</p>
-<p><code>development</code> (axis 3): Es el eje horizontal del triángulo. Representa el periodo en que el siniestro fue reportado. Al igual que el indice <code>origin</code> se puede tomar la periodicidad mensual, trimestral, semestral, anual.</p>
+<p><code>development</code> (axis 3): Es el eje horizontal del triángulo. Representa el periodo en que el siniestro fue reportado. Al igual que el eje <code>origin</code> se puede tomar la periodicidad mensual, trimestral, semestral, anual.</p>
 <h3 id="como-se-trabaja-con-una-clase-triangle">&#191;C&#243;mo se trabaja con una clase <code>Triangle</code>?<a class="anchor-link" href="#como-se-trabaja-con-una-clase-triangle">&#182;</a></h3><ul>
-<li>Independiente de poseer 4 dimensiones, esta clase permite que se interactúe con él de la misma manera que en <code>pandas</code>. Puedes usar los índices <code>index</code> y <code>columns</code> de la misma manera que en un <code>DataFrame</code>, donde cada elemento será un triángulo tradicional. La siguiente imagen muestra como sería la estructura de la clase.</li>
+<li>Independiente de poseer 4 dimensiones, esta clase permite que se interactúe con él de la misma manera que en <code>pandas</code>. Puedes usar los ejes <code>index</code> y <code>columns</code> de la misma manera que en un <code>DataFrame</code>, donde cada elemento será un triángulo tradicional. La siguiente imagen muestra como sería la estructura de la clase.</li>
 </ul>
 <h3 id="como-se-construye-una-clase-triangle">&#191;C&#243;mo se construye una clase <code>Triangle</code>?<a class="anchor-link" href="#como-se-construye-una-clase-triangle">&#182;</a></h3><ul>
 <li>Una clase <code>Triangle</code> se crea a partir de un <code>DataFrame</code> de <code>pandas</code>, el cuál debe poseer como mínimo las siguientes columnas.<ul>
@@ -1904,10 +1925,12 @@ print(cl.__version__)</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">raa_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/casact/chainladder-python/master/chainladder/utils/data/raa.csv&quot;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">raa_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/casact/chainladder-python/master/chainladder/utils/data/raa.csv&quot;</span><span class="p">)</span>
 <span class="n">raa_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">raa_df = pd.read_csv("https://raw.githubusercontent.com/casact/chainladder-python/master/chainladder/utils/data/raa.csv")
+<div id="cell-3" class="clipboard-copy-txt">import pandas as pd
+raa_df = pd.read_csv("https://raw.githubusercontent.com/casact/chainladder-python/master/chainladder/utils/data/raa.csv")
 raa_df.head(10)</div>
     
         </div>
@@ -1952,9 +1975,11 @@ La forma para obtener una clase de tipo <code>Triangle</code> se obtiene con el 
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">raa</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Triangle</span><span class="p">(</span><span class="n">raa_df</span><span class="p">,</span><span class="n">origin</span><span class="o">=</span><span class="s2">&quot;origin&quot;</span><span class="p">,</span><span class="n">development</span><span class="o">=</span><span class="s2">&quot;development&quot;</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;values&quot;</span><span class="p">,</span><span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raa</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">raa</span>
 </pre></div>
 <div id="cell-4" class="clipboard-copy-txt">raa = cl.Triangle(raa_df,origin="origin",development="development",columns="values",cumulative=True)
+print(raa.shape)
 raa</div>
     
         </div>
@@ -1963,6 +1988,97 @@ raa</div>
 </div>
 </div>
 
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Como se puede observar, la información fue agrupada como triángulo.</li>
+<li>Las dimensiones del triángulo indican 4 dimensiones, que corresponden a los ejes anteriormente comentados</li>
+<li>La visualización del triángulo cambiará si nuestra data contiene más de un valor en el eje <code>columns</code> o más de un valor en el eje <code>index</code></li>
+</ul>
+<h3 id="parametro-cumulative">Parametro <code>cumulative</code><a class="anchor-link" href="#parametro-cumulative">&#182;</a></h3><ul>
+<li>El parámetro <code>cumulative</code> indica si los datos que entregamos en el eje <code>columns</code> corresponden a datos acumulativos a la fecha o son los datos específicos de la fecha.</li>
+<li>Es completamente opcional. Si no se especifica, el Triángulo inferirá su estado <code>cumulative/incremental</code> en el punto en el que llame a los métodos <code>cum_to_incr</code> o <code>incr_to_cum</code> (que sirven para pasar de un estado a otro)</li>
+<li>El método <code>is_cumulative</code> nos permite saber si un triangulo tiene su parametro <code>cumulative</code> en <code>True</code> o <code>False</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-5">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">raa</span><span class="o">.</span><span class="n">cum_to_inc</span><span class="p">()</span>
+</pre></div>
+<div id="cell-5" class="clipboard-copy-txt">raa.cum_to_inc()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="valoracion-vs-desarrollo">Valoraci&#243;n vs Desarrollo<a class="anchor-link" href="#valoracion-vs-desarrollo">&#182;</a></h3><p>Si bien la mayoría de los estimadores que utilizan triángulos esperan que el período de desarrollo se exprese como una edad sobre el periodo de origen (diagonal de abajo hacia arriba), es posible transformar un triángulo en un triángulo de valoración, donde los períodos de desarrollo se convierten en períodos de valoración (es decir con la diagonal de arriba hacia abajo) con el método <code>dev_to_val</code></p>
+<p>Los triangulos poseen también la propiedad <code>is_val_tri</code> que indica si el triangulo está en modo valoración (diagonal de arriba hacia abajo)</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>raa.dev_to_val()
+raa.is_val_tri</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="granularidad-del-triangulo">Granularidad del Triangulo<a class="anchor-link" href="#granularidad-del-triangulo">&#182;</a></h3><p>Si el triángulo posee</p>
+
+</div>
+</div>
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
