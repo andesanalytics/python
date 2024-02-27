@@ -26,11 +26,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hizocar.github.io/python_andes_analytics/modulo%204/Chainladder_Apunte%20%281%29/</loc>
-         <lastmod>2024-02-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hizocar.github.io/python_andes_analytics/modulo_1/Desafio/</loc>
          <lastmod>2024-02-27</lastmod>
          <changefreq>daily</changefreq>
@@ -112,6 +107,11 @@
     </url>
     <url>
          <loc>https://hizocar.github.io/python_andes_analytics/modulo_3/Clase_Ejercicio_PostClase/</loc>
+         <lastmod>2024-02-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hizocar.github.io/python_andes_analytics/modulo_4/Chainladder_Apunte%20%281%29/</loc>
          <lastmod>2024-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
