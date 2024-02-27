@@ -1796,9 +1796,9 @@ permiten proyectar los siniestros futuros basados en los datos históricos</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">chainladder</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># pip install chainladder</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt">pip install chainladder</div>
+<div id="cell-1" class="clipboard-copy-txt"># pip install chainladder</div>
     
         </div>
     </div>
@@ -1870,7 +1870,7 @@ print(cl.__version__)</div>
 <p><code>origin</code> (axis 2): Es el eje vertical dentro de un triángulo tradicional. Corresponde al mes, trimestre, semestre o año en el cual ocurrió el siniestro. La periodicidad se puede definir por el usuario.</p>
 <p><code>development</code> (axis 3): Es el eje horizontal del triángulo. Representa el periodo en que el siniestro fue reportado. Al igual que el indice <code>origin</code> se puede tomar la periodicidad mensual, trimestral, semestral, anual.</p>
 <h3 id="como-se-trabaja-con-una-clase-triangle">&#191;C&#243;mo se trabaja con una clase <code>Triangle</code>?<a class="anchor-link" href="#como-se-trabaja-con-una-clase-triangle">&#182;</a></h3><ul>
-<li>Independiente de poseer 4 dimensiones, esta clase permite que se interactúe con él de la misma manera que en <code>pandas</code>. Puedes usar los índices <code>index</code> y <code>columns</code> de la misma manera que en un <code>DataFrame</code>, donde cada elemento será un triángulo tradicional.</li>
+<li>Independiente de poseer 4 dimensiones, esta clase permite que se interactúe con él de la misma manera que en <code>pandas</code>. Puedes usar los índices <code>index</code> y <code>columns</code> de la misma manera que en un <code>DataFrame</code>, donde cada elemento será un triángulo tradicional. La siguiente imagen muestra como sería la estructura de la clase.</li>
 </ul>
 <h3 id="como-se-construye-una-clase-triangle">&#191;C&#243;mo se construye una clase <code>Triangle</code>?<a class="anchor-link" href="#como-se-construye-una-clase-triangle">&#182;</a></h3><ul>
 <li>Una clase <code>Triangle</code> se crea a partir de un <code>DataFrame</code> de <code>pandas</code>, el cuál debe poseer como mínimo las siguientes columnas.<ul>
