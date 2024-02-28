@@ -651,11 +651,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#manejo-de-datos-con-chainladder" class="md-nav__link">
-    Manejo de Datos con Chainladder
+  <a href="#manejo-de-datos-propiedades-basicas" class="md-nav__link">
+    Manejo de Datos: Propiedades Básicas
   </a>
   
-    <nav class="md-nav" aria-label="Manejo de Datos con Chainladder">
+    <nav class="md-nav" aria-label="Manejo de Datos: Propiedades Básicas">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -707,9 +707,43 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxis-tipo-pandas" class="md-nav__link">
+    Sintaxis Tipo Pandas
+  </a>
+  
+    <nav class="md-nav" aria-label="Sintaxis Tipo Pandas">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#correlation-tests" class="md-nav__link">
-    Correlation Tests
+  <a href="#filtros-y-slicing" class="md-nav__link">
+    Filtros y Slicing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-columns" class="md-nav__link">
+    Virtual Columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agregaciones" class="md-nav__link">
+    Agregaciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convertir-a-dataframe" class="md-nav__link">
+    Convertir a DataFrame
   </a>
   
 </li>
@@ -1902,7 +1936,7 @@ print(cl.__version__)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="manejo-de-datos-con-chainladder">Manejo de Datos con Chainladder<a class="anchor-link" href="#manejo-de-datos-con-chainladder">&#182;</a></h2><ul>
+<h2 id="manejo-de-datos-propiedades-basicas">Manejo de Datos: Propiedades B&#225;sicas<a class="anchor-link" href="#manejo-de-datos-propiedades-basicas">&#182;</a></h2><ul>
 <li>El paquete chainladder tiene su propia estructura de datos <code>:class:Triangle</code> que se comporta de manera muy similar a un <code>DataFrame</code> de <code>pandas</code></li>
 <li>Por qué no <code>pandas</code>? Principalmente porque podemos manejar multiples triángulos al mismo tiempo, junto con la eficiencia en memoria</li>
 <li>La estructura <code>Triangle</code> es una estructura de datos en 4D con ejes etiquetados. Estos ejes son <code>index</code>, <code>columns</code>, <code>origin</code>, <code>development</code></li>
@@ -2200,7 +2234,7 @@ df_quarterly.grain('OYDY')</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="link-ratios">Link Ratios<a class="anchor-link" href="#link-ratios">&#182;</a></h3><p>The age-to-age factors or link ratios of a Triangle can be accessed with the link_ratio property. Triangles also have a heatmap method that can optionally be called to apply conditional formatting to triangle values along an axis. The heatmap method requires IPython/Jupyter notebook to render.</p>
+<h3 id="link-ratios">Link Ratios<a class="anchor-link" href="#link-ratios">&#182;</a></h3><p>Los factores de desarrollo por cada periodo origen-desarrollo (también conocidos en inglés como <em>link ratios</em>) pueden ser visualizados con la propiedad <code>link_ratio</code>. Los triángulos además tienen un método llamado <code>heatmap</code> que puedes llamar opcionalmente para darle formatos a las salidas del triángulo. Este metodo requiere de IPython/Jupyter notebook para ejecutarse.</p>
 
 </div>
 </div>
@@ -2226,11 +2260,15 @@ df_quarterly.grain('OYDY')</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">triangle</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
-<span class="n">triangle</span><span class="o">.</span><span class="n">link_ratio</span><span class="o">.</span><span class="n">heatmap</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">triangle_abc</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<span class="n">triangle_abc</span>
+<span class="n">triangle_abc</span><span class="o">.</span><span class="n">link_ratio</span>
+<span class="n">triangle_abc</span><span class="o">.</span><span class="n">link_ratio</span><span class="o">.</span><span class="n">heatmap</span><span class="p">()</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">triangle = cl.load_sample('abc')
-triangle.link_ratio.heatmap()</div>
+<div id="cell-8" class="clipboard-copy-txt">triangle_abc = cl.load_sample('abc')
+triangle_abc
+triangle_abc.link_ratio
+triangle_abc.link_ratio.heatmap()</div>
     
         </div>
     </div>
@@ -2246,7 +2284,8 @@ triangle.link_ratio.heatmap()</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="correlation-tests">Correlation Tests<a class="anchor-link" href="#correlation-tests">&#182;</a></h3><p>The multiplicative chainladder method is based on the strong assumptions of independence across origin years and across valuation years. Mack developed tests to verify if these assumptions hold.</p>
+<h2 id="sintaxis-tipo-pandas">Sintaxis Tipo Pandas<a class="anchor-link" href="#sintaxis-tipo-pandas">&#182;</a></h2><h3 id="filtros-y-slicing">Filtros y Slicing<a class="anchor-link" href="#filtros-y-slicing">&#182;</a></h3><p>Podemos filtrar y seleccionar triángulos de menor tamaño al igual que en pandas. Funciones como <code>iloc</code> o <code>loc</code> aplican de la misma manera.</p>
+<p><strong>Recordar que bajo la lógica de esta librería el eje <code>index</code> vendría siendo el eje de filas y el eje <code>columns</code> el de columnas en pandas.</strong></p>
 
 </div>
 </div>
@@ -2272,11 +2311,23 @@ triangle.link_ratio.heatmap()</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">triangle</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;raa&#39;</span><span class="p">)</span>
-<span class="n">triangle</span><span class="o">.</span><span class="n">valuation_correlation</span><span class="p">()</span><span class="o">.</span><span class="n">z_critical</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Cargamos data con load_sample</span>
+<span class="n">clrd</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;clrd&#39;</span><span class="p">)</span>
+<span class="c1"># Slicing con iloc</span>
+<span class="n">clrd</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># Filtros del eje ``index`` mediante una condicion</span>
+<span class="n">clrd</span><span class="p">[</span><span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;LOB&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;othliab&#39;</span><span class="p">]</span>
+<span class="c1"># Filtro del eje `columns` mediante una selecion de columnas</span>
+<span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;EarnedPremDIR&#39;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">triangle = cl.load_sample('raa')
-triangle.valuation_correlation().z_critical</div>
+<div id="cell-9" class="clipboard-copy-txt"># Cargamos data con load_sample
+clrd = cl.load_sample('clrd')
+# Slicing con iloc
+clrd.iloc[0,1]
+# Filtros del eje ``index`` mediante una condicion
+clrd[clrd['LOB']=='othliab']
+# Filtro del eje `columns` mediante una selecion de columnas
+clrd['EarnedPremDIR']</div>
     
         </div>
     </div>
@@ -2292,9 +2343,56 @@ triangle.valuation_correlation().z_critical</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="virtual-columns">Virtual Columns<a class="anchor-link" href="#virtual-columns">&#182;</a></h3><p>Hay casos en los que queremos posponer los cálculos, podemos crear columnas "virtuales" que pospongan los cálculos cuando sea necesario. Estas columnas se pueden crear envolviendo una columna normal en una función. Las expresiones lambda funcionan como una representación ordenada de columnas virtuales.</p>
 
 </div>
 </div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-10">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">clrd</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;clrd&#39;</span><span class="p">)</span>
+<span class="c1"># A physical column with immediate evaluation</span>
+<span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;PaidLossRatio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;CumPaidLoss&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;EarnedPremDIR&#39;</span><span class="p">]</span>
+<span class="n">clrd</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s1">&#39;PaidLossRatio&#39;</span><span class="p">]</span>
+<span class="c1"># A virtual column with deferred evaluation</span>
+<span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;PaidLossRatio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">clrd</span> <span class="p">:</span> <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;CumPaidLoss&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;EarnedPremDIR&#39;</span><span class="p">]</span>
+<span class="c1"># Good - Defer loss ratio calculation until after summing premiums and losses</span>
+<span class="n">clrd</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s1">&#39;PaidLossRatio&#39;</span><span class="p">]</span>
+</pre></div>
+<div id="cell-10" class="clipboard-copy-txt">clrd = cl.load_sample('clrd')
+# A physical column with immediate evaluation
+clrd['PaidLossRatio'] = clrd['CumPaidLoss'] / clrd['EarnedPremDIR']
+clrd.sum()['PaidLossRatio']
+# A virtual column with deferred evaluation
+clrd['PaidLossRatio'] = lambda clrd : clrd['CumPaidLoss'] / clrd['EarnedPremDIR']
+# Good - Defer loss ratio calculation until after summing premiums and losses
+clrd.sum()['PaidLossRatio']</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -2303,9 +2401,102 @@ triangle.valuation_correlation().z_critical</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="agregaciones">Agregaciones<a class="anchor-link" href="#agregaciones">&#182;</a></h3><p>Al igual que los pandas, puedes agregar múltiples triángulos dentro de un Triángulo usando <code>sum()</code> que opcionalmente puede combinarse con <code>groupby()</code>.</p>
 
 </div>
 </div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-11">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">clrd</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;clrd&#39;</span><span class="p">)</span>
+<span class="n">clrd</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">clrd</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;LOB&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+<div id="cell-11" class="clipboard-copy-txt">clrd = cl.load_sample('clrd')
+clrd.sum()
+clrd.groupby('LOB').sum()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Por defecto, la agregación se aplicará al primer eje con una longitud mayor que 1. </li>
+<li>Alternativamente, puede especificar el eje usando el argumento <code>axis</code> del método agregado.</li>
+</ul>
+<h3 id="convertir-a-dataframe">Convertir a <code>DataFrame</code><a class="anchor-link" href="#convertir-a-dataframe">&#182;</a></h3><p>Cuando un triángulo se presenta con un único nivel del eje <code>index</code> y una sola columna (eje <code>column</code>), se convierte en un objeto 2D (En un triángulo como vimos al comienzo). Como tal, su formato de visualización cambia a uno similar a un marco de datos. Estos triángulos 2D se pueden convertir fácilmente en un marco de datos de pandas utilizando el método <code>to_frame</code>. A partir de este punto, los resultados se pueden operar directamente en pandas.</p>
+<p>La funcionalidad <code>to_frame</code> funciona cuando un Triángulo se divide en dos ejes cualesquiera y no se limita solo a <code>index</code> y <code>column</code></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-12">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">clrd</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;clrd&#39;</span><span class="p">)</span>
+<span class="n">clrd</span>
+<span class="n">clrd</span><span class="p">[</span><span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;LOB&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;ppauto&#39;</span><span class="p">][</span><span class="s1">&#39;CumPaidLoss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;CumPaidLoss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;LOB&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">latest_diagonal</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+</pre></div>
+<div id="cell-12" class="clipboard-copy-txt">clrd = cl.load_sample('clrd')
+clrd
+clrd[clrd['LOB']=='ppauto']['CumPaidLoss'].sum().to_frame()
+clrd['CumPaidLoss'].groupby('LOB').sum().latest_diagonal.to_frame()
+</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
