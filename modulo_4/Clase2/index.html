@@ -1826,12 +1826,12 @@ Licensed under the Apache License, Version 2.0.
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="clase-2-libreria-chainladder">Clase 2: Librer&#237;a Chainladder<a class="anchor-link" href="#clase-2-libreria-chainladder">&#182;</a></h1><p><a href="https://colab.research.google.com/github/andesanalytics/python/blob/main/docs/modulo_4/Clase2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <h2 id="introduccion-a-chainladder">Introducci&#243;n a Chainladder<a class="anchor-link" href="#introduccion-a-chainladder">&#182;</a></h2><ul>
-<li><p>La biblioteca <code>chainladder</code> de Python es una herramienta utilizada en el análisis actuarial, 
+<li><p>La biblioteca <code>chainladder</code> de Python es una herramienta utilizada en el análisis actuarial,
 principalmente en el ámbito de seguros.</p>
 </li>
 <li><p>Su principal función es ayudar en la estimación de reservas de siniestros ocurridos y no reportados.</p>
 </li>
-<li><p>La librería posee multiples técnicas de proyección, que se basan en el análisis de triángulos de desarrollo de pérdidas, que 
+<li><p>La librería posee multiples técnicas de proyección, que se basan en el análisis de triángulos de desarrollo de pérdidas, que
 permiten proyectar los siniestros futuros basados en los datos históricos</p>
 </li>
 </ul>
@@ -1851,13 +1851,13 @@ permiten proyectar los siniestros futuros basados en los datos históricos</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -1872,14 +1872,67 @@ permiten proyectar los siniestros futuros basados en los datos históricos</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># pip install chainladder</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">chainladder</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt"># pip install chainladder</div>
+<div id="cell-1" class="clipboard-copy-txt">pip install chainladder</div>
     
         </div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Collecting chainladder
+  Downloading chainladder-0.8.18-py3-none-any.whl (1.3 MB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">1.3/1.3 MB</span> <span class="ansi-red-fg">8.6 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Requirement already satisfied: pandas&gt;=0.23 in /usr/local/lib/python3.10/dist-packages (from chainladder) (1.5.3)
+Requirement already satisfied: scikit-learn&gt;=0.23 in /usr/local/lib/python3.10/dist-packages (from chainladder) (1.2.2)
+Requirement already satisfied: numba&gt;0.54 in /usr/local/lib/python3.10/dist-packages (from chainladder) (0.58.1)
+Collecting sparse&gt;=0.9 (from chainladder)
+  Downloading sparse-0.15.1-py2.py3-none-any.whl (116 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">116.3/116.3 kB</span> <span class="ansi-red-fg">12.7 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.10/dist-packages (from chainladder) (3.7.1)
+Collecting dill (from chainladder)
+  Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">116.3/116.3 kB</span> <span class="ansi-red-fg">14.1 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Requirement already satisfied: patsy in /usr/local/lib/python3.10/dist-packages (from chainladder) (0.5.6)
+Requirement already satisfied: llvmlite&lt;0.42,&gt;=0.41.0dev0 in /usr/local/lib/python3.10/dist-packages (from numba&gt;0.54-&gt;chainladder) (0.41.1)
+Requirement already satisfied: numpy&lt;1.27,&gt;=1.22 in /usr/local/lib/python3.10/dist-packages (from numba&gt;0.54-&gt;chainladder) (1.25.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.10/dist-packages (from pandas&gt;=0.23-&gt;chainladder) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas&gt;=0.23-&gt;chainladder) (2023.4)
+Requirement already satisfied: scipy&gt;=1.3.2 in /usr/local/lib/python3.10/dist-packages (from scikit-learn&gt;=0.23-&gt;chainladder) (1.11.4)
+Requirement already satisfied: joblib&gt;=1.1.1 in /usr/local/lib/python3.10/dist-packages (from scikit-learn&gt;=0.23-&gt;chainladder) (1.3.2)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn&gt;=0.23-&gt;chainladder) (3.3.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;chainladder) (1.2.0)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;chainladder) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;chainladder) (4.49.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;chainladder) (1.4.5)
+Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;chainladder) (23.2)
+Requirement already satisfied: pillow&gt;=6.2.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;chainladder) (9.4.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;chainladder) (3.1.1)
+Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (from patsy-&gt;chainladder) (1.16.0)
+Installing collected packages: dill, sparse, chainladder
+Successfully installed chainladder-0.8.18 dill-0.3.8 sparse-0.15.1
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -1895,13 +1948,13 @@ permiten proyectar los siniestros futuros basados en los datos históricos</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -1926,6 +1979,29 @@ print(cl.__version__)</div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0.8.18
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -2450,7 +2526,7 @@ clrd.groupby('LOB').sum()</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Por defecto, la agregación se aplicará al primer eje con una longitud mayor que 1. </li>
+<li>Por defecto, la agregación se aplicará al primer eje con una longitud mayor que 1.</li>
 <li>Alternativamente, puede especificar el eje usando el argumento <code>axis</code> del método agregado.</li>
 </ul>
 <h3 id="convertir-a-dataframe">Convertir a <code>DataFrame</code><a class="anchor-link" href="#convertir-a-dataframe">&#182;</a></h3><p>Cuando un triángulo se presenta con un único nivel del eje <code>index</code> y una sola columna (eje <code>column</code>), se convierte en un objeto 2D (En un triángulo como vimos al comienzo). Como tal, su formato de visualización cambia a uno similar a un marco de datos. Estos triángulos 2D se pueden convertir fácilmente en un marco de datos de pandas utilizando el método <code>to_frame</code>. A partir de este punto, los resultados se pueden operar directamente en pandas.</p>
@@ -2544,7 +2620,7 @@ clrd['CumPaidLoss'].groupby('LOB').sum().latest_diagonal.to_frame()
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="metodos-avanzados-de-modelado">M&#233;todos Avanzados de Modelado<a class="anchor-link" href="#metodos-avanzados-de-modelado">&#182;</a></h2><p>Además del modelo Chainladder básico, la biblioteca ofrece otros modelos como Bornhuetter-Ferguson. 
+<h2 id="metodos-avanzados-de-modelado">M&#233;todos Avanzados de Modelado<a class="anchor-link" href="#metodos-avanzados-de-modelado">&#182;</a></h2><p>Además del modelo Chainladder básico, la biblioteca ofrece otros modelos como Bornhuetter-Ferguson.
 Aquí hay un ejemplo de cómo aplicarlo:</p>
 <div class="highlight"><pre><span></span><span class="n">modelo_bf</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">BornhuetterFerguson</span><span class="p">()</span>
 <span class="n">resultado_bf</span> <span class="o">=</span> <span class="n">modelo_bf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">triangulo</span><span class="p">)</span>
@@ -2562,7 +2638,7 @@ Aquí hay un ejemplo de cómo aplicarlo:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="visualizacion-y-reporte">Visualizaci&#243;n y Reporte<a class="anchor-link" href="#visualizacion-y-reporte">&#182;</a></h2><p><code>chainladder</code> facilita la visualización de los resultados. Por ejemplo, puedes graficar los resultados 
+<h2 id="visualizacion-y-reporte">Visualizaci&#243;n y Reporte<a class="anchor-link" href="#visualizacion-y-reporte">&#182;</a></h2><p><code>chainladder</code> facilita la visualización de los resultados. Por ejemplo, puedes graficar los resultados
 del modelo:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -2582,7 +2658,7 @@ del modelo:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="ejemplos-y-casos-practicos">Ejemplos y Casos Pr&#225;cticos<a class="anchor-link" href="#ejemplos-y-casos-practicos">&#182;</a></h2><p>Aquí puedes incluir varios ejemplos prácticos y casos de estudio utilizando conjuntos de datos reales 
+<h2 id="ejemplos-y-casos-practicos">Ejemplos y Casos Pr&#225;cticos<a class="anchor-link" href="#ejemplos-y-casos-practicos">&#182;</a></h2><p>Aquí puedes incluir varios ejemplos prácticos y casos de estudio utilizando conjuntos de datos reales
 o simulados para ilustrar cómo se puede aplicar <code>chainladder</code> en situaciones del mundo real.</p>
 
 </div>
@@ -2595,10 +2671,10 @@ o simulados para ilustrar cómo se puede aplicar <code>chainladder</code> en sit
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="recursos-adicionales-y-conclusion">Recursos Adicionales y Conclusi&#243;n<a class="anchor-link" href="#recursos-adicionales-y-conclusion">&#182;</a></h2><p>Para aprender más sobre <code>chainladder</code> y análisis actuarial, puedes consultar la documentación oficial 
-y otros recursos en línea. Siempre es útil mantenerse al día con las últimas tendencias y técnicas en 
+<h2 id="recursos-adicionales-y-conclusion">Recursos Adicionales y Conclusi&#243;n<a class="anchor-link" href="#recursos-adicionales-y-conclusion">&#182;</a></h2><p>Para aprender más sobre <code>chainladder</code> y análisis actuarial, puedes consultar la documentación oficial
+y otros recursos en línea. Siempre es útil mantenerse al día con las últimas tendencias y técnicas en
 el campo actuarial.</p>
-<p>Conclusión: <code>chainladder</code> es una herramienta esencial para los actuarios en el ámbito de seguros, 
+<p>Conclusión: <code>chainladder</code> es una herramienta esencial para los actuarios en el ámbito de seguros,
 ofreciendo un enfoque robusto y flexible para la estimación de reservas.</p>
 
 </div>
