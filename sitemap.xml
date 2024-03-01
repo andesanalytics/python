@@ -126,7 +126,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hizocar.github.io/python_andes_analytics/modulo_3/Desafio/</loc>
+         <lastmod>2024-03-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hizocar.github.io/python_andes_analytics/modulo_4/Clase1/</loc>
+         <lastmod>2024-03-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hizocar.github.io/python_andes_analytics/modulo_4/Clase1_PostClase/</loc>
          <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
