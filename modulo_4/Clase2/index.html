@@ -781,23 +781,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modelado-actuarial-basico" class="md-nav__link">
-    Modelado Actuarial Básico
+  <a href="#estimadores-de-cola" class="md-nav__link">
+    Estimadores de cola
+  </a>
+  
+    <nav class="md-nav" aria-label="Estimadores de cola">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-basicos-y-puntos-en-comun" class="md-nav__link">
+    Conceptos básicos y puntos en común
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#metodos-avanzados-de-modelado" class="md-nav__link">
-    Métodos Avanzados de Modelado
+        
+          <li class="md-nav__item">
+  <a href="#estimador-tailcurve" class="md-nav__link">
+    Estimador TailCurve
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#visualizacion-y-reporte" class="md-nav__link">
-    Visualización y Reporte
+        
+          <li class="md-nav__item">
+  <a href="#comienzo-de-la-estimacion" class="md-nav__link">
+    Comienzo de la Estimación
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#periodo-de-proyeccion" class="md-nav__link">
+    Periodo de Proyección
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasa-de-caida" class="md-nav__link">
+    Tasa de Caida
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2916,92 +2943,55 @@ cl.DevelopmentConstant(patterns=patterns, style='ldf').fit(triangle).ldf_</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="estimadores-de-cola">Estimadores de cola<a class="anchor-link" href="#estimadores-de-cola">&#182;</a></h2><p>LaS pérdidas no observadas más allá del borde de un Triángulo puedeN ser sustancialES y es una parte necesaria del análisis de un actuario. Esto es particularmente cierto para las líneas de cola larga, más comunes en seguros comerciales o niveles excesivos de pérdidas (seguros de reembolsos de gastos médicos de alto costo).</p>
+<p>Con todas las estimaciones de cola, estamos extrapolando más allá de los datos conocidos, lo que conlleva sus propios desafíos. Tiende a ser más difícil validar los supuestos cuando se realiza una estimación de cola. Además, muchas de las técnicas conllevan un alto grado de sensibilidad a los supuestos que se elegirán al realizar el análisis.</p>
+<p>Sin embargo, es una parte necesaria del conjunto de herramientas del actuario para estimar los pasivos de reserva.</p>
+<h3 id="conceptos-basicos-y-puntos-en-comun">Conceptos b&#225;sicos y puntos en com&#250;n<a class="anchor-link" href="#conceptos-basicos-y-puntos-en-comun">&#182;</a></h3><ul>
+<li>Al igual que con la familia de estimadores <code>Development</code>, el módulo <code>Tail</code> proporciona una variedad de transformadores de cola que permiten la extrapolación de patrones de desarrollo más allá del final del triángulo. </li>
+<li>Al ser transformadores, podemos esperar que cada estimador tenga un método <code>fit</code> y otro método <code>transform</code>. </li>
+<li>El método <code>transform</code> nos devuelve nuestro Triángulo con parámetros estimados adicionales para incorporar nuestra revisión de cola en nuestras estimaciones de IBNR.</li>
+<li>Cada estimador <code>tail</code> produjo un atributo <code>tail_</code> que representa la estimación puntual de la cola del Triángulo.</li>
+</ul>
+<p>Veamos el primer ejemplo de una estimación con un valor asignado arbitrariamente.</p>
 
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="modelado-actuarial-basico">Modelado Actuarial B&#225;sico<a class="anchor-link" href="#modelado-actuarial-basico">&#182;</a></h2><p>El modelo Chainladder básico se puede aplicar de la siguiente manera:</p>
-<div class="highlight"><pre><span></span><span class="n">modelo</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Chainladder</span><span class="p">()</span>
-<span class="n">resultado</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">triangulo</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-20">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">triangle</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;genins&#39;</span><span class="p">)</span>
+<span class="n">tail</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">TailConstant</span><span class="p">(</span><span class="mf">1.10</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
+<span class="n">tail</span><span class="o">.</span><span class="n">tail_</span>
 </pre></div>
-<p>Este ejemplo muestra cómo ajustar el modelo Chainladder básico a un triángulo de desarrollo de pérdidas.</p>
+<div id="cell-20" class="clipboard-copy-txt">triangle = cl.load_sample('genins')
+tail = cl.TailConstant(1.10).fit_transform(triangle)
+tail.tail_</div>
+    
+        </div>
+    </div>
 
 </div>
 </div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -3010,16 +3000,48 @@ cl.DevelopmentConstant(patterns=patterns, style='ldf').fit(triangle).ldf_</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="metodos-avanzados-de-modelado">M&#233;todos Avanzados de Modelado<a class="anchor-link" href="#metodos-avanzados-de-modelado">&#182;</a></h2><p>Además del modelo Chainladder básico, la biblioteca ofrece otros modelos como Bornhuetter-Ferguson.
-Aquí hay un ejemplo de cómo aplicarlo:</p>
-<div class="highlight"><pre><span></span><span class="n">modelo_bf</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">BornhuetterFerguson</span><span class="p">()</span>
-<span class="n">resultado_bf</span> <span class="o">=</span> <span class="n">modelo_bf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">triangulo</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">resultado_bf</span><span class="p">)</span>
+<p><strong>Al ajustar un estimador <code>tail</code> sin especificar primero un estimador <code>Development</code>, chainladder asume un desarrollo de triangulos con el parametro <code>volume-weighted</code>. Para anular esto, primero debes declarar transformar tu triángulo con un transformador de desarrollo.</strong></p>
+<h3 id="estimador-tailcurve">Estimador <code>TailCurve</code><a class="anchor-link" href="#estimador-tailcurve">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-21">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">triangle</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;quarterly&#39;</span><span class="p">)[</span><span class="s1">&#39;paid&#39;</span><span class="p">]</span>
+<span class="n">tail</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">TailCurve</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
+<span class="c1"># Slice just the tail entries</span>
+<span class="n">tail</span><span class="o">.</span><span class="n">cdf_</span><span class="p">[</span><span class="o">~</span><span class="n">tail</span><span class="o">.</span><span class="n">ldf_</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">triangle</span><span class="o">.</span><span class="n">link_ratio</span><span class="o">.</span><span class="n">development</span><span class="p">)]</span>
 </pre></div>
-<p>Este modelo combina los datos históricos con a prioris para hacer proyecciones.</p>
+<div id="cell-21" class="clipboard-copy-txt">triangle = cl.load_sample('quarterly')['paid']
+tail = cl.TailCurve().fit(triangle)
+# Slice just the tail entries
+tail.cdf_[~tail.ldf_.development.isin(triangle.link_ratio.development)]</div>
+    
+        </div>
+    </div>
 
 </div>
 </div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -3028,15 +3050,158 @@ Aquí hay un ejemplo de cómo aplicarlo:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="visualizacion-y-reporte">Visualizaci&#243;n y Reporte<a class="anchor-link" href="#visualizacion-y-reporte">&#182;</a></h2><p><code>chainladder</code> facilita la visualización de los resultados. Por ejemplo, puedes graficar los resultados
-del modelo:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<h3 id="comienzo-de-la-estimacion">Comienzo de la Estimaci&#243;n<a class="anchor-link" href="#comienzo-de-la-estimacion">&#182;</a></h3><p>Por defecto, los estimadores de cola se asignan a la edad de desarrollo más antigua del Triángulo. En la práctica, los últimos factores de desarrollo conocidos de un Triángulo pueden ser poco confiables y se prefiere unir la cola antes y usarla como mecanismo de suavizado. Todos los estimadores de cola tienen un parámetro <code>attachment_age</code>  que le permite seleccionar la edad de desarrollo a la que se unirá la cola.</p>
 
-<span class="c1"># Graficar los resultados</span>
-<span class="n">triangulo</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-22">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">triangle</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;genins&#39;</span><span class="p">)</span>
+<span class="n">unsmoothed</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">TailCurve</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span><span class="o">.</span><span class="n">ldf_</span>
+<span class="n">smoothed</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">TailCurve</span><span class="p">(</span><span class="n">attachment_age</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span><span class="o">.</span><span class="n">ldf_</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span>
+    <span class="n">unsmoothed</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;Unsmoothed&#39;</span><span class="p">),</span>
+    <span class="n">smoothed</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;Age 24+ Smoothed&#39;</span><span class="p">)),</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Selected Link Ratio&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;LDF&#39;</span><span class="p">);</span>
 </pre></div>
-<p>Este código genera un gráfico del triángulo de desarrollo de pérdidas.</p>
+<div id="cell-22" class="clipboard-copy-txt">triangle = cl.load_sample('genins')
+unsmoothed = cl.TailCurve().fit(triangle).ldf_
+smoothed = cl.TailCurve(attachment_age=24).fit(triangle).ldf_
+pd.concat((
+    unsmoothed.T.iloc[:, 0].rename('Unsmoothed'),
+    smoothed.T.iloc[:, 0].rename('Age 24+ Smoothed')),
+    axis=1).plot(marker='o', title='Selected Link Ratio', ylabel='LDF');</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="periodo-de-proyeccion">Periodo de Proyecci&#243;n<a class="anchor-link" href="#periodo-de-proyeccion">&#182;</a></h3><p>Independientemente de dónde se coloque una cola, habrá patrones incrementales hasta al menos un año después del final del Triángulo. Surgen casos en los que se desea modelar  en un horizonte temporal más largo. Para estos casos, es posible modificar el período de proyección (en meses) de todos los estimadores de cola especificando la cantidad de meses que desea extender sus patrones (dentro del parametro <code>projection_period</code>).</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-23">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Extend tail run-off 4 years past end of Triangle.</span>
+<span class="n">tail</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">TailCurve</span><span class="p">(</span><span class="n">projection_period</span><span class="o">=</span><span class="mi">12</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
+<span class="n">tail</span><span class="o">.</span><span class="n">ldf_</span><span class="p">[</span><span class="o">~</span><span class="n">tail</span><span class="o">.</span><span class="n">ldf_</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">triangle</span><span class="o">.</span><span class="n">link_ratio</span><span class="o">.</span><span class="n">development</span><span class="p">)]</span>
+</pre></div>
+<div id="cell-23" class="clipboard-copy-txt"># Extend tail run-off 4 years past end of Triangle.
+tail = cl.TailCurve(projection_period=12*4).fit(triangle)
+tail.ldf_[~tail.ldf_.development.isin(triangle.link_ratio.development)]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="tasa-de-caida">Tasa de Caida<a class="anchor-link" href="#tasa-de-caida">&#182;</a></h3><p>Se puede controlar la tasa de caída de su cola. También está disponible un parámetro exponencial <code>decay</code></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-24">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tail</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">TailConstant</span><span class="p">(</span><span class="n">tail</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
+<span class="n">tail</span><span class="o">.</span><span class="n">ldf_</span>
+<span class="n">tail</span><span class="o">.</span><span class="n">tail_</span>
+</pre></div>
+<div id="cell-24" class="clipboard-copy-txt">tail = cl.TailConstant(tail=1.05, decay=0.95).fit_transform(triangle)
+tail.ldf_
+tail.tail_</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 
 </div>
 </div>
@@ -3048,8 +3213,6 @@ del modelo:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="ejemplos-y-casos-practicos">Ejemplos y Casos Pr&#225;cticos<a class="anchor-link" href="#ejemplos-y-casos-practicos">&#182;</a></h2><p>Aquí puedes incluir varios ejemplos prácticos y casos de estudio utilizando conjuntos de datos reales
-o simulados para ilustrar cómo se puede aplicar <code>chainladder</code> en situaciones del mundo real.</p>
 
 </div>
 </div>
@@ -3061,11 +3224,39 @@ o simulados para ilustrar cómo se puede aplicar <code>chainladder</code> en sit
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="recursos-adicionales-y-conclusion">Recursos Adicionales y Conclusi&#243;n<a class="anchor-link" href="#recursos-adicionales-y-conclusion">&#182;</a></h2><p>Para aprender más sobre <code>chainladder</code> y análisis actuarial, puedes consultar la documentación oficial
-y otros recursos en línea. Siempre es útil mantenerse al día con las últimas tendencias y técnicas en
-el campo actuarial.</p>
-<p>Conclusión: <code>chainladder</code> es una herramienta esencial para los actuarios en el ámbito de seguros,
-ofreciendo un enfoque robusto y flexible para la estimación de reservas.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 
 </div>
 </div>
