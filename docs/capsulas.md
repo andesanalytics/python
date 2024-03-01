@@ -16,3 +16,6 @@
 ## Modulo 3
 ### Importar y exportar datos con Pandas
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gzRo5gm7I5M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Métodos y Atributos de un DataFrame
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s8WZmzILeUU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
