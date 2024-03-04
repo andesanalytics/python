@@ -919,9 +919,70 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modelos-de-oynr" class="md-nav__link">
-    Modelos de OYNR
+  <a href="#modelos-de-oynr-definiciones-en-comun" class="md-nav__link">
+    Modelos de OYNR - Definiciones en Comun
   </a>
+  
+    <nav class="md-nav" aria-label="Modelos de OYNR - Definiciones en Comun">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triangulos-completados" class="md-nav__link">
+    Triangulos Completados
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelos-de-oynr-metodologias" class="md-nav__link">
+    Modelos de OYNR - Metodologias
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelos de OYNR - Metodologias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chainladder" class="md-nav__link">
+    Chainladder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mackchainladder" class="md-nav__link">
+    MackChainladder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bornhuetterferguson" class="md-nav__link">
+    BornhuetterFerguson
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benktander" class="md-nav__link">
+    Benktander
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capecod" class="md-nav__link">
+    CapeCod
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2223,12 +2284,10 @@ print(cl.__version__)</div>
 <h3 id="como-se-trabaja-con-una-clase-triangle">&#191;C&#243;mo se trabaja con una clase <code>Triangle</code>?<a class="anchor-link" href="#como-se-trabaja-con-una-clase-triangle">&#182;</a></h3><ul>
 <li>Independiente de poseer 4 dimensiones, esta clase permite que se interactúe con él de la misma manera que en <code>pandas</code>. Puedes usar los ejes <code>index</code> y <code>columns</code> de la misma manera que en un <code>DataFrame</code>, donde cada elemento será un triángulo tradicional. La siguiente imagen muestra como sería la estructura de la clase.</li>
 </ul>
-<p><img src="https://drive.google.com/uc?export=view&id=17yiVi-2aFOBuAWkuElkgOFG2iJ7gUuyZ" width = "800" align="center"/></p>
-<p><img src="https://drive.google.com/uc?export=view&amp;id=17yiVi-2aFOBuAWkuElkgOFG2iJ7gUuyZ" alt=""></p>
 <figure>
 <center>
 <img src="https://drive.google.com/uc?id=17yiVi-2aFOBuAWkuElkgOFG2iJ7gUuyZ" />
-<figcaption>sgvbsvsvsdvd</figcaption></center>
+<figcaption>Estructura Clase Triangle</figcaption></center>
 </figure><h3 id="como-se-construye-una-clase-triangle">&#191;C&#243;mo se construye una clase <code>Triangle</code>?<a class="anchor-link" href="#como-se-construye-una-clase-triangle">&#182;</a></h3><ul>
 <li>Una clase <code>Triangle</code> se crea a partir de un <code>DataFrame</code> de <code>pandas</code>, el cuál debe poseer como mínimo las siguientes columnas.<ul>
 <li>Dos columnas de tipo fecha que representen los ejes <code>origin</code> y <code>development</code>.</li>
@@ -2236,7 +2295,11 @@ print(cl.__version__)</div>
 </ul>
 </li>
 </ul>
-
+<figure>
+<center>
+<img src="https://drive.google.com/uc?id=1OLd4ccAVEWor9yssbB0X5dsAcc2VMokl" />
+<figcaption>Formato dataframe a cargar</figcaption></center>
+</figure>
 </div>
 </div>
 </div>
@@ -2512,13 +2575,11 @@ raa.is_val_tri</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># CARGAMOS DATA DE PRUEBA CON LA FUNCION load_sample()</span>
-<span class="n">df_quarterly</span><span class="o">=</span><span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;quarterly&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df_quarterly</span><span class="o">=</span><span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;quarterly&#39;</span><span class="p">)</span>
 <span class="n">df_quarterly</span>
 <span class="n">df_quarterly</span><span class="o">.</span><span class="n">grain</span><span class="p">(</span><span class="s1">&#39;OYDY&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt"># CARGAMOS DATA DE PRUEBA CON LA FUNCION load_sample()
-df_quarterly=cl.load_sample('quarterly')
+<div id="cell-8" class="clipboard-copy-txt">df_quarterly=cl.load_sample('quarterly')
 df_quarterly
 df_quarterly.grain('OYDY')</div>
     
@@ -2613,22 +2674,14 @@ triangle_abc.link_ratio.heatmap()</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Cargamos data con load_sample</span>
-<span class="n">clrd</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;clrd&#39;</span><span class="p">)</span>
-<span class="c1"># Slicing con iloc</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">clrd</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;clrd&#39;</span><span class="p">)</span>
 <span class="n">clrd</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="c1"># Filtros del eje ``index`` mediante una condicion</span>
 <span class="n">clrd</span><span class="p">[</span><span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;LOB&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;othliab&#39;</span><span class="p">]</span>
-<span class="c1"># Filtro del eje `columns` mediante una selecion de columnas</span>
 <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;EarnedPremDIR&#39;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt"># Cargamos data con load_sample
-clrd = cl.load_sample('clrd')
-# Slicing con iloc
+<div id="cell-10" class="clipboard-copy-txt">clrd = cl.load_sample('clrd')
 clrd.iloc[0,1]
-# Filtros del eje ``index`` mediante una condicion
 clrd[clrd['LOB']=='othliab']
-# Filtro del eje `columns` mediante una selecion de columnas
 clrd['EarnedPremDIR']</div>
     
         </div>
@@ -2672,21 +2725,15 @@ clrd['EarnedPremDIR']</div>
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">clrd</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;clrd&#39;</span><span class="p">)</span>
-<span class="c1"># A physical column with immediate evaluation</span>
 <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;PaidLossRatio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;CumPaidLoss&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;EarnedPremDIR&#39;</span><span class="p">]</span>
 <span class="n">clrd</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s1">&#39;PaidLossRatio&#39;</span><span class="p">]</span>
-<span class="c1"># A virtual column with deferred evaluation</span>
 <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;PaidLossRatio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">clrd</span> <span class="p">:</span> <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;CumPaidLoss&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">clrd</span><span class="p">[</span><span class="s1">&#39;EarnedPremDIR&#39;</span><span class="p">]</span>
-<span class="c1"># Good - Defer loss ratio calculation until after summing premiums and losses</span>
 <span class="n">clrd</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s1">&#39;PaidLossRatio&#39;</span><span class="p">]</span>
 </pre></div>
 <div id="cell-11" class="clipboard-copy-txt">clrd = cl.load_sample('clrd')
-# A physical column with immediate evaluation
 clrd['PaidLossRatio'] = clrd['CumPaidLoss'] / clrd['EarnedPremDIR']
 clrd.sum()['PaidLossRatio']
-# A virtual column with deferred evaluation
 clrd['PaidLossRatio'] = lambda clrd : clrd['CumPaidLoss'] / clrd['EarnedPremDIR']
-# Good - Defer loss ratio calculation until after summing premiums and losses
 clrd.sum()['PaidLossRatio']</div>
     
         </div>
@@ -2790,8 +2837,7 @@ clrd.groupby('LOB').sum()</div>
 <div id="cell-13" class="clipboard-copy-txt">clrd = cl.load_sample('clrd')
 clrd
 clrd[clrd['LOB']=='ppauto']['CumPaidLoss'].sum().to_frame()
-clrd['CumPaidLoss'].groupby('LOB').sum().latest_diagonal.to_frame()
-</div>
+clrd['CumPaidLoss'].groupby('LOB').sum().latest_diagonal.to_frame()</div>
     
         </div>
     </div>
@@ -3353,10 +3399,87 @@ tail.tail_</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="modelos-de-oynr">Modelos de OYNR<a class="anchor-link" href="#modelos-de-oynr">&#182;</a></h2><p>Los Estimadores IBNR son la etapa final en el análisis de las estimaciones de reservas en el paquete Chainladder. Estos estimadores tienen un método de predicción en lugar de un método de transformación.</p>
+<h2 id="modelos-de-oynr-definiciones-en-comun">Modelos de OYNR - Definiciones en Comun<a class="anchor-link" href="#modelos-de-oynr-definiciones-en-comun">&#182;</a></h2><ul>
+<li>Los Estimadores IBNR son la etapa final en el análisis de las estimaciones de reservas en el paquete Chainladder. </li>
+<li>Estos estimadores tienen un método de predicción en lugar de un método de transformación.</li>
+<li>Todos los métodos de reserva OYNR determinan el costo final de las reclamaciones de seguros (<strong>ultimate claims</strong> en inglés). Estos últimos se capturan en el atributo <code>ultimate_</code> del estimador.</li>
+<li>La diferencia entre los atributos <code>ultimate_</code> y <code>latest_diagonal</code> de un triangulo son guardados en el atributo <code>ibnr_</code> del estimador.</li>
+</ul>
 
 </div>
 </div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-25">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">cl</span><span class="o">.</span><span class="n">Chainladder</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;raa&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">ultimate_</span>
+</pre></div>
+<div id="cell-25" class="clipboard-copy-txt">cl.Chainladder().fit(cl.load_sample('raa')).ultimate_</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-26">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">triangle</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;quarterly&#39;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Chainladder</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
+<span class="n">case_reserves</span> <span class="o">=</span> <span class="p">(</span><span class="n">triangle</span><span class="p">[</span><span class="s1">&#39;incurred&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">triangle</span><span class="p">[</span><span class="s1">&#39;paid&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">latest_diagonal</span>
+<span class="n">true_ibnr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">ibnr_</span><span class="p">[</span><span class="s1">&#39;paid&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">case_reserves</span>
+<span class="n">true_ibnr</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+<div id="cell-26" class="clipboard-copy-txt">triangle = cl.load_sample('quarterly')
+model = cl.Chainladder().fit(triangle)
+case_reserves = (triangle['incurred']-triangle['paid']).latest_diagonal
+true_ibnr = model.ibnr_['paid'] - case_reserves
+true_ibnr.sum()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -3365,9 +3488,50 @@ tail.tail_</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="triangulos-completados">Triangulos Completados<a class="anchor-link" href="#triangulos-completados">&#182;</a></h3><ul>
+<li>Los atributos <code>full_triangle_</code> y <code>full_expectation_</code> dan una vista del triangulo completado</li>
+<li><code>full_expectation_</code> Está basado en los valores que entrega el atributo <code>ultimate_</code> junto con los factores de desarrollo</li>
+<li><code>full_triangle_</code> es una mezcla del triangulo real más lo proyectado de acuerdo al método de completado</li>
+</ul>
 
 </div>
 </div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-27">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Chainladder</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s1">&#39;ukmotor&#39;</span><span class="p">))</span>
+<span class="n">residuals</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">full_expectation_</span> <span class="o">-</span> <span class="n">model</span><span class="o">.</span><span class="n">full_triangle_</span>
+<span class="n">residuals</span><span class="p">[</span><span class="n">residuals</span><span class="o">.</span><span class="n">valuation</span><span class="o">&lt;=</span><span class="n">model</span><span class="o">.</span><span class="n">X_</span><span class="o">.</span><span class="n">valuation_date</span><span class="p">]</span>
+</pre></div>
+<div id="cell-27" class="clipboard-copy-txt">model = cl.Chainladder().fit(cl.load_sample('ukmotor'))
+residuals = model.full_expectation_ - model.full_triangle_
+residuals[residuals.valuation<=model.X_.valuation_date]</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -3376,9 +3540,44 @@ tail.tail_</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Otro análisis típico es predecir el OYNR para períodos futuros.</p>
 
 </div>
 </div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-28">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expected_3y_run_off</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">full_triangle_</span><span class="o">.</span><span class="n">dev_to_val</span><span class="p">()</span><span class="o">.</span><span class="n">cum_to_incr</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="s1">&#39;2014&#39;</span><span class="p">:</span><span class="s1">&#39;2016&#39;</span><span class="p">]</span>
+<span class="n">expected_3y_run_off</span>
+</pre></div>
+<div id="cell-28" class="clipboard-copy-txt">expected_3y_run_off = model.full_triangle_.dev_to_val().cum_to_incr().loc[..., '2014':'2016']
+expected_3y_run_off</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -3387,9 +3586,80 @@ tail.tail_</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="modelos-de-oynr-metodologias">Modelos de OYNR - Metodologias<a class="anchor-link" href="#modelos-de-oynr-metodologias">&#182;</a></h2><h3 id="chainladder"><code>Chainladder</code><a class="anchor-link" href="#chainladder">&#182;</a></h3><ul>
+<li>Metodo mas basico de estimación de OYNR</li>
+<li>La característica distintiva del método <code>:class:Chainladder</code> es que las reclamaciones finales para cada año de accidente se generan a partir de valores registrados, suponiendo que el desarrollo de las reclamaciones futuras es similar al desarrollo de años anteriores.</li>
+<li>Algunos supuestos subyacentes del modelo son:<ul>
+<li>Los siniestros registrados hasta la fecha continuarán desarrollándose de manera similar en el futuro</li>
+<li>Para un año de accidentes reciente, los siniestros observados hasta ahora le dicen algo sobre los siniestros aún por observar. Esto contrasta con los supuestos subyacentes a la técnica de reclamaciones esperadas (expected loss ratio).</li>
+<li>Procesamiento consistente de reclamos</li>
+<li>Combinación estable de tipos de reclamos</li>
+<li>Límites de póliza estables
+### <code>MackChainladder</code></li>
+</ul>
+</li>
+<li>Puede considerarse como una forma especial de regresión lineal ponderada a través del origen para cada período de desarrollo.</li>
+<li>Dado lo anterior, las estadísticas sobre la variabilidad de los datos y las estimaciones de los parámetros permiten estimar los errores de predicción</li>
+<li>Es el método más básico de los métodos estocásticos.</li>
+<li>Solo es compatible con los estimadores <code>Development</code> y <code>TailCurve</code>.</li>
+</ul>
+<h3 id="bornhuetterferguson"><code>BornhuetterFerguson</code><a class="anchor-link" href="#bornhuetterferguson">&#182;</a></h3><ul>
+<li>Es esencialmente una combinación de las técnicas de desarrollo y de reclamaciones esperadas</li>
+<li>En la técnica de desarrollo de triangulos<ul>
+<li>Multiplicamos las reclamaciones reales por un factor de desarrollo de reclamaciones acumulativo</li>
+<li><strong>Esta técnica puede conducir a proyecciones erráticas y poco confiables cuando el factor de desarrollo acumulativo es grande porque una variación relativamente pequeña en las reclamaciones reportadas o la presentación de una reclamación inusualmente grande podría resultar en una variación muy grande en las reclamaciones finales proyectadas</strong></li>
+</ul>
+</li>
+<li><p>En la técnica de reclamaciones esperadas</p>
+<ul>
+<li>La estimación de reclamaciones impagas es igual a la diferencia entre una estimación predeterminada de reclamaciones esperadas y los pagos reales</li>
+<li><strong>Esto tiene la ventaja de la estabilidad, pero ignora por completo los resultados reales informados</strong></li>
+</ul>
+</li>
+<li><p>La técnica de Bornhuetter-Ferguson combina las dos técnicas al dividir los reclamos finales en dos componentes: reclamos reales reportados (o pagados) y reclamos esperados no reportados (o no pagados). A medida que la experiencia madura, se le da más peso a las reclamaciones reales y las reclamaciones esperadas se vuelven gradualmente menos importantes.</p>
+</li>
+<li>Es uno de los tantos estimadores que soporta una medida de exposicion. Para esto, debemos agregarla durante el método <code>fit</code> a traves del argumento <code>sample_weight</code>, entregando una triángulo que represente la exposición.</li>
+<li>Debemos tener una estimacion <em>a priori</em> de la siniestralidad esperada podemos usar el argumento <code>a priori</code> para establecerlo dentro del estimador.</li>
+</ul>
 
 </div>
 </div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-29">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">cl_ult</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">Chainladder</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">raa</span><span class="p">)</span><span class="o">.</span><span class="n">ultimate_</span> <span class="c1"># Chainladder Ultimate</span>
+<span class="n">apriori</span> <span class="o">=</span> <span class="n">cl_ult</span><span class="o">*</span><span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="n">cl_ult</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Mean Chainladder Ultimate</span>
+<span class="n">cl</span><span class="o">.</span><span class="n">BornhuetterFerguson</span><span class="p">(</span><span class="n">apriori</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">raa</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">apriori</span><span class="p">)</span><span class="o">.</span><span class="n">ultimate_</span>
+</pre></div>
+<div id="cell-29" class="clipboard-copy-txt">cl_ult = cl.Chainladder().fit(raa).ultimate_ # Chainladder Ultimate
+apriori = cl_ult*0+(cl_ult.sum()/10) # Mean Chainladder Ultimate
+cl.BornhuetterFerguson(apriori=1).fit(raa, sample_weight=apriori).ultimate_</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -3398,6 +3668,24 @@ tail.tail_</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="benktander"><code>Benktander</code><a class="anchor-link" href="#benktander">&#182;</a></h3><ul>
+<li>Es un promedio ponderado por factoeres de credibilidad de las técnica <code>BornhuetterFerguson</code> y <code>Chainladder</code></li>
+<li>La ventaja citada por los autores es que este método resultará más receptivo que la técnica de Bornhuetter-Ferguson y más estable que la técnica de Chainladder.</li>
+</ul>
+<p>$Ultimate = Apriori\times (1-\frac{1}{CDF})^{n} + Latest\times \sum_{k=0}^{n-1}(1-\frac{1}{CDF})^{k}$</p>
+<ul>
+<li>Donde<ul>
+<li>n=0 corresponde al método de pérdida esperada.</li>
+<li>n=1 es el método BornhuetterFerguson.</li>
+<li>n&gt;&gt;1 converge al metodo Chainladder.</li>
+</ul>
+</li>
+</ul>
+<h3 id="capecod"><code>CapeCod</code><a class="anchor-link" href="#capecod">&#182;</a></h3><ul>
+<li>También conocido como método de Stanard-Buhlmann, es similar a la técnica de Bornhuetter-Ferguson</li>
+<li>La principal diferencia entre los dos métodos es la derivación del índice de siniestralidad esperado.</li>
+<li>Se obtiene del propio triángulo en lugar de una selección independiente y a menudo basada en criterios como en la técnica de Bornhuetter-Ferguson</li>
+</ul>
 
 </div>
 </div>
