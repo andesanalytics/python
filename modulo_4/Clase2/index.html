@@ -918,6 +918,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#modelos-de-oynr" class="md-nav__link">
+    Modelos de OYNR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-resumen-de-estructuras-de-datos-y-estructura-de-chainladder" class="md-nav__link">
+    Anexo - Resumen de Estructuras de Datos y Estructura de Chainladder
+  </a>
+  
+    <nav class="md-nav" aria-label="Anexo - Resumen de Estructuras de Datos y Estructura de Chainladder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-una-clase" class="md-nav__link">
+    ¿Qué es una clase?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos-y-metodos-dentro-de-una-clase" class="md-nav__link">
+    Atributos y Métodos dentro de una Clase:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scikit-learn-y-chainladder" class="md-nav__link">
+    scikit-learn y Chainladder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimadores" class="md-nav__link">
+    Estimadores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformers" class="md-nav__link">
+    Transformers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3298,6 +3353,7 @@ tail.tail_</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="modelos-de-oynr">Modelos de OYNR<a class="anchor-link" href="#modelos-de-oynr">&#182;</a></h2><p>Los Estimadores IBNR son la etapa final en el análisis de las estimaciones de reservas en el paquete Chainladder. Estos estimadores tienen un método de predicción en lugar de un método de transformación.</p>
 
 </div>
 </div>
@@ -3353,6 +3409,42 @@ tail.tail_</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="anexo-resumen-de-estructuras-de-datos-y-estructura-de-chainladder">Anexo - Resumen de Estructuras de Datos y Estructura de <code>Chainladder</code><a class="anchor-link" href="#anexo-resumen-de-estructuras-de-datos-y-estructura-de-chainladder">&#182;</a></h2><h3 id="que-es-una-clase">&#191;Qu&#233; es una clase?<a class="anchor-link" href="#que-es-una-clase">&#182;</a></h3><ul>
+<li>Las clases proporcionan un medio para agrupar datos y funcionalidades. </li>
+<li>La creación de una nueva clase crea un nuevo tipo de objeto, lo que permite crear nuevas instancias de ese tipo. </li>
+<li>En otras palabras, una clase es una plantilla de código para crear objetos.</li>
+</ul>
+<h3 id="atributos-y-metodos-dentro-de-una-clase">Atributos y M&#233;todos dentro de una Clase:<a class="anchor-link" href="#atributos-y-metodos-dentro-de-una-clase">&#182;</a></h3><p>Una clase por sí sola no sirve de nada a menos que haya alguna funcionalidad asociada a ella. Las funcionalidades se definen estableciendo atributos, que actúan como contenedores para datos y funciones relacionadas con esos atributos. Esas funciones se llaman métodos.</p>
+<h3 id="scikit-learn-y-chainladder"><code>scikit-learn</code> y <code>Chainladder</code><a class="anchor-link" href="#scikit-learn-y-chainladder">&#182;</a></h3><p>La librería <code>scikit-learn</code> es una interfaz de modelado común que se utiliza para construir y adaptar una variedad incontable de algoritmos de aprendizaje automático. La interfaz común permite un intercambio muy rápido entre modelos con cambios mínimos de código. El paquete <code>Chainladder</code> ha adoptado la interfaz para promover un enfoque estandarizado para adaptar modelos de reserva. Esto es, usa su misma estructura de objetos y clases.</p>
+<h3 id="estimadores">Estimadores<a class="anchor-link" href="#estimadores">&#182;</a></h3><ul>
+<li>Es un tipo de objeto. </li>
+<li>Todos los objetos del tipo estimador se pueden configurar opcionalmente con parámetros para especificar de forma única el modelo que se está construyendo. Esto se hace antes de enviar cualquier dato a través del modelo.</li>
+<li>Todos los estimadores en <code>Chainladder</code> poseen una de las siguientes caracteristicas: <ul>
+<li>Poseen el método <code>transform</code>, que transforma el Triángulo de entrada y le otorga nueos atributos</li>
+<li>Predicen un resultado con el método <code>predict</code>.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">estimator</span> <span class="o">=</span> <span class="n">Estimator</span><span class="p">(</span><span class="n">param1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">param2</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>Todos los estimadores en la librería <code>Chainladder</code>poseen un método llamado <code>fit</code> que toma una <code>Triangle</code> como input.</p>
+<div class="highlight"><pre><span></span><span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+<p>Todos los estimadores incluyen una opción <code>sample_weight</code> en el método <code>fit</code> para especificar una base de exposición. Si una base de exposición no es aplicable, entonces se ignora este argumento.</p>
+<div class="highlight"><pre><span></span><span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
+</pre></div>
+<h3 id="transformers">Transformers<a class="anchor-link" href="#transformers">&#182;</a></h3><p>En <code>scikit-learn</code>, un transformador se refiere a un objeto que transforma un conjunto de datos en uno nuevo para preparar el conjunto de datos para el modelado predictivo.</p>
+<p>Exceptuando los modelos IBNR finales, los estimadores de <code>chainladder</code> son transformadores. Es decir, devuelven el objeto <code>Triangle</code> con propiedades adicionales.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Fitting and Transforming</span>
+<span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">transformed_data</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># One line equivalent</span>
+<span class="n">transformed_data</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+<h3 id="predictors">Predictors<a class="anchor-link" href="#predictors">&#182;</a></h3><p>Todos los predictores incluyen un método de predicción.</p>
+<div class="highlight"><pre><span></span><span class="n">prediction</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
+</pre></div>
+<p>Los predictores están destinados a crear nuevas predicciones. No es raro ajustar un modelo sobre una data más agregada (digamos a nivel nacional) y predecir en un triángulo más granular (estatal o provincial).</p>
 
 </div>
 </div>
