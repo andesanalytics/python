@@ -147,7 +147,7 @@
         "### ¿Cómo se trabaja con una clase ``Triangle``?\n",
         "+ Independiente de poseer 4 dimensiones, esta clase permite que se interactúe con él de la misma manera que en `pandas`. Puedes usar los ejes `index` y `columns` de la misma manera que en un `DataFrame`, donde cada elemento será un triángulo tradicional. La siguiente imagen muestra como sería la estructura de la clase.\n",
         "\n",
-        "\n",
+        "<img src=\"https://drive.google.com/uc?export=view&id=1Cv8pnt4WqfjfVv7FSmhgBng7oT70g5_i\" width = \"100\" align=\"center\"/>\n",
         "\n",
         "\n",
         "### ¿Cómo se construye una clase ``Triangle``?\n",
