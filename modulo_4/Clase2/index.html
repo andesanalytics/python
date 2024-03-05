@@ -2094,6 +2094,8 @@ principalmente en el ámbito de seguros.</p>
 <li><p>La librería posee multiples técnicas de proyección, que se basan en el análisis de triángulos de desarrollo de pérdidas, que
 permiten proyectar los siniestros futuros basados en los datos históricos</p>
 </li>
+<li><p>ksdjqklmdqw</p>
+</li>
 </ul>
 
 </div>
@@ -2117,7 +2119,7 @@ permiten proyectar los siniestros futuros basados en los datos históricos</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -2214,7 +2216,7 @@ Successfully installed chainladder-0.8.18 dill-0.3.8 sparse-0.15.1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -3144,8 +3146,8 @@ cl.DevelopmentConstant(patterns=patterns, style='ldf').fit(triangle).ldf_</div>
 <p>Con todas las estimaciones de cola, estamos extrapolando más allá de los datos conocidos, lo que conlleva sus propios desafíos. Tiende a ser más difícil validar los supuestos cuando se realiza una estimación de cola. Además, muchas de las técnicas conllevan un alto grado de sensibilidad a los supuestos que se elegirán al realizar el análisis.</p>
 <p>Sin embargo, es una parte necesaria del conjunto de herramientas del actuario para estimar los pasivos de reserva.</p>
 <h3 id="conceptos-basicos-y-puntos-en-comun">Conceptos b&#225;sicos y puntos en com&#250;n<a class="anchor-link" href="#conceptos-basicos-y-puntos-en-comun">&#182;</a></h3><ul>
-<li>Al igual que con la familia de estimadores <code>Development</code>, el módulo <code>Tail</code> proporciona una variedad de transformadores de cola que permiten la extrapolación de patrones de desarrollo más allá del final del triángulo. </li>
-<li>Al ser transformadores, podemos esperar que cada estimador tenga un método <code>fit</code> y otro método <code>transform</code>. </li>
+<li>Al igual que con la familia de estimadores <code>Development</code>, el módulo <code>Tail</code> proporciona una variedad de transformadores de cola que permiten la extrapolación de patrones de desarrollo más allá del final del triángulo.</li>
+<li>Al ser transformadores, podemos esperar que cada estimador tenga un método <code>fit</code> y otro método <code>transform</code>.</li>
 <li>El método <code>transform</code> nos devuelve nuestro Triángulo con parámetros estimados adicionales para incorporar nuestra revisión de cola en nuestras estimaciones de IBNR.</li>
 <li>Cada estimador <code>tail</code> produjo un atributo <code>tail_</code> que representa la estimación puntual de la cola del Triángulo.</li>
 </ul>
@@ -3400,7 +3402,7 @@ tail.tail_</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="modelos-de-oynr-definiciones-en-comun">Modelos de OYNR - Definiciones en Comun<a class="anchor-link" href="#modelos-de-oynr-definiciones-en-comun">&#182;</a></h2><ul>
-<li>Los Estimadores IBNR son la etapa final en el análisis de las estimaciones de reservas en el paquete Chainladder. </li>
+<li>Los Estimadores IBNR son la etapa final en el análisis de las estimaciones de reservas en el paquete Chainladder.</li>
 <li>Estos estimadores tienen un método de predicción en lugar de un método de transformación.</li>
 <li>Todos los métodos de reserva OYNR determinan el costo final de las reclamaciones de seguros (<strong>ultimate claims</strong> en inglés). Estos últimos se capturan en el atributo <code>ultimate_</code> del estimador.</li>
 <li>La diferencia entre los atributos <code>ultimate_</code> y <code>latest_diagonal</code> de un triangulo son guardados en el atributo <code>ibnr_</code> del estimador.</li>
@@ -3698,16 +3700,16 @@ cl.BornhuetterFerguson(apriori=1).fit(raa, sample_weight=apriori).ultimate_</div
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="anexo-resumen-de-estructuras-de-datos-y-estructura-de-chainladder">Anexo - Resumen de Estructuras de Datos y Estructura de <code>Chainladder</code><a class="anchor-link" href="#anexo-resumen-de-estructuras-de-datos-y-estructura-de-chainladder">&#182;</a></h2><h3 id="que-es-una-clase">&#191;Qu&#233; es una clase?<a class="anchor-link" href="#que-es-una-clase">&#182;</a></h3><ul>
-<li>Las clases proporcionan un medio para agrupar datos y funcionalidades. </li>
-<li>La creación de una nueva clase crea un nuevo tipo de objeto, lo que permite crear nuevas instancias de ese tipo. </li>
+<li>Las clases proporcionan un medio para agrupar datos y funcionalidades.</li>
+<li>La creación de una nueva clase crea un nuevo tipo de objeto, lo que permite crear nuevas instancias de ese tipo.</li>
 <li>En otras palabras, una clase es una plantilla de código para crear objetos.</li>
 </ul>
 <h3 id="atributos-y-metodos-dentro-de-una-clase">Atributos y M&#233;todos dentro de una Clase:<a class="anchor-link" href="#atributos-y-metodos-dentro-de-una-clase">&#182;</a></h3><p>Una clase por sí sola no sirve de nada a menos que haya alguna funcionalidad asociada a ella. Las funcionalidades se definen estableciendo atributos, que actúan como contenedores para datos y funciones relacionadas con esos atributos. Esas funciones se llaman métodos.</p>
 <h3 id="scikit-learn-y-chainladder"><code>scikit-learn</code> y <code>Chainladder</code><a class="anchor-link" href="#scikit-learn-y-chainladder">&#182;</a></h3><p>La librería <code>scikit-learn</code> es una interfaz de modelado común que se utiliza para construir y adaptar una variedad incontable de algoritmos de aprendizaje automático. La interfaz común permite un intercambio muy rápido entre modelos con cambios mínimos de código. El paquete <code>Chainladder</code> ha adoptado la interfaz para promover un enfoque estandarizado para adaptar modelos de reserva. Esto es, usa su misma estructura de objetos y clases.</p>
 <h3 id="estimadores">Estimadores<a class="anchor-link" href="#estimadores">&#182;</a></h3><ul>
-<li>Es un tipo de objeto. </li>
+<li>Es un tipo de objeto.</li>
 <li>Todos los objetos del tipo estimador se pueden configurar opcionalmente con parámetros para especificar de forma única el modelo que se está construyendo. Esto se hace antes de enviar cualquier dato a través del modelo.</li>
-<li>Todos los estimadores en <code>Chainladder</code> poseen una de las siguientes caracteristicas: <ul>
+<li>Todos los estimadores en <code>Chainladder</code> poseen una de las siguientes caracteristicas:<ul>
 <li>Poseen el método <code>transform</code>, que transforma el Triángulo de entrada y le otorga nueos atributos</li>
 <li>Predicen un resultado con el método <code>predict</code>.</li>
 </ul>
